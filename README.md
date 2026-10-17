@@ -56,3 +56,7 @@ Create a `ResearchAgent` with five callable adapters, then call `invoke(question
 ## Practical relevance and limits
 
 The workflow is suitable for prototyping catalog research or internal knowledge assistants where an evidence gap must be visible. Citation membership does not prove that an answer follows from its sources. Confidence requires calibration; production use also needs authorization, durable session storage, prompt-injection evaluation, and operational monitoring. This repository contains the workflow core; it does not include a vector database, hosted application, supplied catalog, or provider SDK wrappers.
+
+## Reuse
+
+The original contributions listed in [LICENSING.md](LICENSING.md) are available under [MIT](LICENSE). This scoped grant preserves upstream notices and separate dataset, simulator, notebook and checkpoint terms.
