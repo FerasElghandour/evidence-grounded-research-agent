@@ -4,15 +4,24 @@
 
 Research answers need traceable sources and a clear response when the local knowledge base cannot support a claim. This project routes a question through local retrieval and an evidence-sufficiency check before using an external search provider.
 
-```mermaid
-flowchart LR
-  Q[Question and session context] --> R[Local retrieval]
-  R --> E[Evidence assessment]
-  E -->|Sufficient| A[Cited answer]
-  E -->|Insufficient| W[Web search]
-  W --> V[Reassess evidence]
-  V --> A
-  V --> X[Abstain when unsupported]
+![Implementation mechanism: Resolve follow-up and local retrieval → Assess evidence sufficiency → Search and reassess when insufficient → Abstain or call answer generator → Validate source IDs and bound isolated history](assets/mechanism.svg)
+
+## Try a small example
+
+Local deterministic callbacks exercise evidence assessment and bounded history. No external search provider or language model is called.
+
+After the local setup below, run from the repository root:
+
+```sh
+python examples/quickstart.py
+```
+
+The [example source](examples/quickstart.py), [captured output](examples/expected-output.txt) and [execution record](examples/environment.json) keep this demonstration inspectable. Floating-point values may vary with library versions.
+
+Observed output from this run:
+
+```text
+{'answer': 'Released in 2020.', 'citations': ('local:1',), 'trace': ('retrieve', 'assess')}
 ```
 
 ## Implementation
