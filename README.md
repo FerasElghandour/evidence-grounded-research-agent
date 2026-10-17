@@ -6,6 +6,15 @@ Research answers need traceable sources and a clear response when the local know
 
 ![Implementation mechanism: Resolve follow-up and local retrieval → Assess evidence sufficiency → Search and reassess when insufficient → Abstain or call answer generator → Validate source IDs and bound isolated history](assets/mechanism.svg)
 
+
+
+## Reproduce and inspect
+
+The executable reproduction profile now records exact commands, input/source hashes, dependency versions, logs and pass/fail status. Its scope distinguishes behavior checks from full-data benchmarks.
+
+[Commands, artifacts and benchmark scope](BENCHMARKS.md) · [Versioned profiles](reproduction.json)
+
+
 ## Try a small example
 
 Local deterministic callbacks exercise evidence assessment and bounded history. No external search provider or language model is called.
